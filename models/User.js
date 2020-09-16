@@ -20,4 +20,6 @@ const UserSchema = mongoose.Schema({
     },
 });
 
+// where github sendin u?
+
 module.exports = mongoose.model('user', UserSchema)
