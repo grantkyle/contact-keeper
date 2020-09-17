@@ -5,7 +5,7 @@ const app = express();
 
 connectDB();
 
-// Middleware
+// Intialize Middleware
 app.use(express.json({ extended: false }));
 
 app.get("/", (req, res) =>
