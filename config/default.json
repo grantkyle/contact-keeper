@@ -1,4 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://grantkyle:qpwoeiruty1029384756@contactkeeper.86zeb.mongodb.net/ContactKeeper?retryWrites=true&w=majority",
+  "mongoURI": "mongodb+srv://grantkyle:BARNABy1991@contactkeeper.86zeb.mongodb.net/ContactKeeper?retryWrites=true&w=majority",
   "jwtSecret": "secret"
 }

@@ -12,65 +12,72 @@ import {
   CLEAR_FILTER,
 } from "../types";
 
-const ContactState = props => {
-    const initialState = {
-        contacts: [
-            {
-                "name":"Grant KyleTest77003",
-                "email":"sgrantkyle+test2@gmail.com.com",
-                "phone":"512-294-7550",
-                "type":"personal"
-            },
-            {
-                "name":"Grant KyleTest90210",
-                "email":"sgrantkyle+test2@gmail.com.com",
-                "phone":"512-294-7550",
-                "type":"personal"
-            },
-            {
-                "name":"Grant KyleTest78745",
-                "email":"sgrantkyle+test2@gmail.com.com",
-                "phone":"512-294-7550",
-                "type":"personal"
-            },
-            {
-                "name":"Grant KyleTest78741",
-                "email":"sgrantkyle+test2@gmail.com.com",
-                "phone":"512-294-7550",
-                "type":"personal"
-            },
-            {
-                "name":"Grant KyleTest78613",
-                "email":"sgrantkyle+test2@gmail.com.com",
-                "phone":"512-294-7550",
-                "type":"personal"
-            }  
-        ]
-    };
+const ContactState = (props) => {
+  const initialState = {
+    contacts: [
+      {
+        name: "Grant KyleTest77003",
+        email: "sgrantkyle+test2@gmail.com.com",
+        phone: "512-294-7550",
+        type: "personal",
+      },
+      {
+        name: "Grant KyleTest90210",
+        email: "sgrantkyle+test2@gmail.com.com",
+        phone: "512-294-7550",
+        type: "personal",
+      },
+      {
+        name: "Grant KyleTest78745",
+        email: "sgrantkyle+test2@gmail.com.com",
+        phone: "512-294-7550",
+        type: "personal",
+      },
+      {
+        name: "Grant KyleTest78741",
+        email: "sgrantkyle+test2@gmail.com.com",
+        phone: "512-294-7550",
+        type: "personal",
+      },
+      {
+        name: "Grant KyleTest78613",
+        email: "sgrantkyle+test2@gmail.com.com",
+        phone: "512-294-7550",
+        type: "personal",
+      },
+    ],
+  };
 
-    const [state, dispatch] = useReducer(contactReducer, initialState);
+  const [state, dispatch] = useReducer(contactReducer, initialState);
 
-    // Add Contact
+  // Add Contact
+  const addContact = (contact) => {
+    contact.id = uuid.v4();
+    dispatch({ type: ADD_CONTACT, payload: contact });
+  };
 
-    // Delete Contact
+  // Delete Contact
 
-    // Set Current Contact
+  // Set Current Contact
 
-    // Clear Current Contact
+  // Clear Current Contact
 
-    // Update Contact
+  // Update Contact
 
-    // Filter Contacts
+  // Filter Contacts
 
-    // Clear Filter
+  // Clear Filter
 
-    return (
-        <ContactContext.Provider value={{
-            contacts: state.contacts
-        }}>
-            { props.children }
-        </ContactContext.Provider>
-    )
+  return (
+    <ContactContext.Provider
+      value={{
+        contacts: state.contacts,
+        addContact,
+      }}
+    >
+      {props.children}
+    </ContactContext.Provider>
+  );
 };
 
 export default ContactState;
