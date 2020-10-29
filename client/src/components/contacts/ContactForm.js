@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ContactContext from "../../context/contact/contactContext";
 
 const ContactForm = () => {
@@ -65,7 +65,7 @@ const ContactForm = () => {
         <input
           type="radio"
           name="type"
-          value="personal"
+          value="professional"
           checked={type === "professional"}
           onChange={onChange}
         />{" "}
@@ -75,6 +75,7 @@ const ContactForm = () => {
             type="submit"
             value="Add Contact"
             className="btn btn-primary btn-block"
+           
           />
         </div>
       </form>
